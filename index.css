@@ -1,0 +1,38 @@
+.div {
+    height: 300px;
+    width: 200px;
+    background-color: white;
+    border-color: gray;
+    border-style: solid; 
+    display:inline-block; 
+    margin: 10px; 
+    text-align: center;
+    color: brown;  
+    font-family: Calibri;
+    border-radius: 6%;
+    overflow: auto;
+}
+
+#changes{
+    display:none;
+}
+
+#form{
+    display:none;
+}
+#filters{
+    display:none;
+}
+#addButton{
+color: maroon;
+margin-left: 10px;
+}
+
+#edit{
+    color: maroon;
+    margin-left: 10px;
+}
+#filterProducts{
+    color: maroon;
+    margin-left: 10px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link href="index.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- div for the products display -->
+  <div id="store"></div>
+
+  <!-- button to add product -->
+  <input type="button" value="Add product" onclick="shop.addProductButton()" id="addButton" class="btn btn-default" />
+  <!-- A form for adding a product that opens with the click of a button -->
+  <form id="form">
+
+    <div class="form-group col-md-6">
+      <label for="inputCity">Enter name product</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputCity">Enter category</label>
+      <input type="text" class="form-control" id="category">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputCity">Enter price</label>
+      <input type="number" class="form-control" id="price" min="1">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputCity">Enter amount</label>
+      <input type="number" class="form-control" id="amount" min="1">
+    </div>
+
+    <button
+      onclick="shop.addProduct(document.getElementById('name').value, document.getElementById('category').value, document.getElementById('price').value, document.getElementById('amount').value);return false">Add
+      the ptoduct</button>
+  </form>
+
+
+  <!-- button to edit products -->
+  <input type="button" value="Editing products" onclick="shop.editProduct()" id="edit" class="btn btn-default" />
+  <!-- inputs to edit products -->
+  <div id="changes">
+
+    <div>
+      <h2>Adding quantity</h2>
+      <label>Select product by code</label>
+      <select id="addQtyInStock" class="select-code"></select>
+      <input type="number" id="addChange" min="0" />
+
+      <button onclick="shop.whichIdAdd()">submit</button>
+    </div>
+
+    <div>
+      <h2>Quantity reduction</h2>
+      <label>Select product by code</label>
+      <select id="lower" class="select-code"></select>
+      <input type="number" id="subChange" min="0" />
+
+      <button onclick="shop.whichIdSub()">submit</button>
+    </div>
+
+    <div>
+      <h2>Price change</h2>
+      <label>Select product by code</label>
+      <select id="changePrice" class="select-code"></select>
+      <input type="number" id="changeProductPrice" min="0" />
+
+      <button onclick="shop.whichIdChangePrice()">submit</button>
+    </div>
+
+  </div>
+
+
+  <!-- button to filter products -->
+  <input type="button" value="Filters" onclick="shop.filterProduct()" id="filterProducts" class="btn btn-default" />
+  <!-- inputs to filter products -->
+  <div class="container" id="filters">
+
+    <!-- Filter by name -->
+    <div class="form-group col-md-6">
+      <label >Enter name</label>
+      <input type="text" class="form-control" id="selectName">
+      <button onclick="shop.findProductByName()" class="btn btn-danger">Filter by name</button>
+    </div>
+
+    <!-- Filter by range price -->
+    <div class="form-group col-md-6">
+      <label >From price:</label>
+      <input type="text" class="form-control" id="rangeA">
+      <label >To price:</label>
+      <input type="text" class="form-control" id="rangeB">
+      <button onclick="shop.findByRangePrice()" class="btn btn-danger">Filter by range price</button>
+    </div>
+   
+    <!-- Filter by category -->
+    <div class="form-group col-md-6">
+      <select class="form-select" aria-label="Default select example" id="selectCategory">
+        <option>FOOD</option>
+        <option>FURNITURE</option>
+        <option>CLOTHES</option>
+        <option>TOYS</option>
+      </select>
+      <button onclick="shop.findByCategory()" class="btn btn-danger"> filter by category</button>
+    </div>
+
+     <!-- Filter by maximum in stock -->
+    <div class="form-group col-md-6">
+      <label >Enter maximum products in stock</label>
+      <input type="text" class="form-control" id="maxStock">
+      <button onclick="shop.findByOutOfStock(document.getElementById('maxStock').value)" class=" btn btn-danger">OutOfStock</button>
+    </div>
+
+  </div>
+
+
+  <script src="JavaScript.js"></script>
+
+</body>
+
+</html>
