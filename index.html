@@ -23,10 +23,15 @@
       <label for="inputCity">Enter name product</label>
       <input type="text" class="form-control" id="name">
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputCity">Enter category</label>
-      <input type="text" class="form-control" id="category">
-    </div>
+
+    <!-- <input type="text" class="form-control" id="category"> -->
+    <select id="category" class="form-select" aria-label="Default select example">
+      <option value="TOYS">TOYS</option>
+      <option value="CLOTHES">CLOTHES</option>
+      <option value="FURNITURE">FURNITURE</option>
+      <option value="FOOD">FOOD</option>
+    </select>
+
     <div class="form-group col-md-6">
       <label for="inputCity">Enter price</label>
       <input type="number" class="form-control" id="price" min="1">
@@ -84,20 +89,20 @@
 
     <!-- Filter by name -->
     <div class="form-group col-md-6">
-      <label >Enter name</label>
+      <label>Enter name</label>
       <input type="text" class="form-control" id="selectName">
       <button onclick="shop.findProductByName()" class="btn btn-danger">Filter by name</button>
     </div>
 
     <!-- Filter by range price -->
     <div class="form-group col-md-6">
-      <label >From price:</label>
+      <label>From price:</label>
       <input type="text" class="form-control" id="rangeA">
-      <label >To price:</label>
+      <label>To price:</label>
       <input type="text" class="form-control" id="rangeB">
       <button onclick="shop.findByRangePrice()" class="btn btn-danger">Filter by range price</button>
     </div>
-   
+
     <!-- Filter by category -->
     <div class="form-group col-md-6">
       <select class="form-select" aria-label="Default select example" id="selectCategory">
@@ -109,11 +114,12 @@
       <button onclick="shop.findByCategory()" class="btn btn-danger"> filter by category</button>
     </div>
 
-     <!-- Filter by maximum in stock -->
+    <!-- Filter by maximum in stock -->
     <div class="form-group col-md-6">
-      <label >Enter maximum products in stock</label>
+      <label>Enter maximum products in stock</label>
       <input type="text" class="form-control" id="maxStock">
-      <button onclick="shop.findByOutOfStock(document.getElementById('maxStock').value)" class=" btn btn-danger">OutOfStock</button>
+      <button onclick="shop.findByOutOfStock(document.getElementById('maxStock').value)"
+        class=" btn btn-danger">OutOfStock</button>
     </div>
 
   </div>
